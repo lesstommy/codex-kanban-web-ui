@@ -40,7 +40,7 @@
     "mongo:install": "bash scripts/mongo-install.sh"
   },
   "dependencies": {
-    "@fastify/cors": "^11.2.0",
+    "@fastify/cors": "^11.3.0",
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
     "lucide-react": "^1.11.0",
