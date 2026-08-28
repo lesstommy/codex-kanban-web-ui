@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.local/
+.env
+.DS_Store
+coverage/
+
+# Task outputs created while Harness is used as a worker workspace.
+/assets/
+/outputs/
+/public/assets/
+/*-landing.html
+/backlog-import-template.csv

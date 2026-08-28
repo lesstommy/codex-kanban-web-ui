@@ -1,0 +1,38 @@
+name: Support question
+description: Ask for help with installation, configuration, or normal usage.
+title: "[Question]: "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0-alpha or a commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include macOS, Node.js, MongoDB, and Codex CLI versions when relevant.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Explain what you are trying to do and where you are blocked.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Include relevant `npm run doctor` output after removing sensitive data.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I removed credentials, private prompts, full local paths, and proprietary project content.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

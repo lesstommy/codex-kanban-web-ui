@@ -1,0 +1,64 @@
+{
+  "name": "codex-kanban-web-ui",
+  "version": "0.1.0-alpha",
+  "description": "A local-first Kanban workbench for managing Codex app-server tasks.",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lesstommy/codex-kanban-web-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lesstommy/codex-kanban-web-ui/issues"
+  },
+  "homepage": "https://github.com/lesstommy/codex-kanban-web-ui#readme",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "type": "module",
+  "scripts": {
+    "harness": "tsx src/cli/index.ts",
+    "start": "bash scripts/start-server.sh",
+    "start:bg": "bash scripts/start-server-bg.sh",
+    "stop": "bash scripts/stop-server.sh",
+    "status": "bash scripts/status-server.sh",
+    "doctor": "node scripts/doctor.mjs",
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "tsx watch src/server/index.ts",
+    "dev:web": "vite --host 127.0.0.1",
+    "serve": "concurrently -n api,web -c cyan,magenta \"npm:serve:api\" \"npm:serve:web\"",
+    "serve:api": "tsx src/server/index.ts",
+    "serve:web": "vite preview",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:ci": "HARNESS_SKIP_CODEX_E2E=1 vitest run",
+    "test:codex": "vitest run src/server/app.test.ts",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "mongo:start": "bash scripts/mongo-start.sh",
+    "mongo:init": "bash scripts/mongo-init.sh",
+    "mongo:install": "bash scripts/mongo-install.sh"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.8.5",
+    "lucide-react": "^1.11.0",
+    "mongodb": "^7.2.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "mongodb-memory-server": "^11.0.1",
+    "tsx": "^4.23.12",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  }
+}
