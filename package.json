@@ -44,7 +44,7 @@
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
     "lucide-react": "^1.11.0",
-    "mongodb": "^7.2.0",
+    "mongodb": "^7.6.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "zod": "^4.3.6"
